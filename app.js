@@ -2,11 +2,12 @@ const express = require('express');
 const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgen = require('morgan');
+const path = require('path');
 
 const app = express();
 
 app.use(morgen('tiny'));
-
+app.use(express.static(path.join(__dirname, '/public/')));
 
 app.get('/', (req, res) => {
     res.send('Hello from my app.');
