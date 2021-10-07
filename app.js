@@ -1,7 +1,11 @@
 const express = require('express');
 const chalk = require('chalk');
 const debug = require('debug')('app');
+const morgen = require('morgan');
+
 const app = express();
+
+app.use(morgen('tiny'));
 
 
 app.get('/', (req, res) => {
