@@ -4,6 +4,7 @@ const debug = require('debug')('app');
 const morgen = require('morgan');
 const path = require('path');
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(morgen('tiny'));
@@ -14,5 +15,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(3000, ()=>{
-    debug(`listening on port ${chalk.green('3000')}`);
+    debug(`listening on port ${chalk.green(PORT)}`);
 })
