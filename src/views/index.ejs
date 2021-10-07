@@ -2,4 +2,10 @@
     <body>
         welcome to <%=title%>
     </body>
+    <ul>
+        <% data.map((i) => {
+            %><li><%=i%></li><%
+        })
+        %>
+    </ul>
 </html>
