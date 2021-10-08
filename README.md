@@ -3,5 +3,5 @@
 Run command from cmd.
 
 ```bash
-set DEBUG=app & node app.js
+npm run debug
 ```
