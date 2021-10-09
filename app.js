@@ -21,8 +21,11 @@ sessionsRouter.route('/').get((req, res)=>{
     });    
 });
 
-sessionsRouter.route('/1').get((req, res)=>{
-    res.send('hello sessions');
+sessionsRouter.route('/:id').get((req, res)=>{
+    const id = req.params.id;
+    res.render('session', {
+        session: sessions[id]
+    });
 });
 
 app.use('/sessions', sessionsRouter);
