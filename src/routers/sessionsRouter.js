@@ -5,7 +5,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const sessionsRouter = express.Router();
 
 sessionsRouter.route('/').get((req, res) => {
-  const url = 'mongodb+srv://dbUser:4wvTkSQovddkQvwd@cluster0.b2tlh.mongodb.net?retryWrites=true&w=majority';
+    const url = 'mongodb+srv://dbUser:4wvTkSQovddkQvwd@cluster0.b2tlh.mongodb.net?retryWrites=true&w=majority';
     const dbName = 'globomantics';
 
     (async function mongo(){
