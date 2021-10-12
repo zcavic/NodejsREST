@@ -11,7 +11,7 @@ authRouter.route('/signUp').post((req, res) => {
     const dbName = 'globomantics';
 
     (async function addUser(){
-        let client = null;
+        let client;
         try{
             client = await MongoClient.connect(url);
             const db = client.db(dbName);
@@ -26,9 +26,7 @@ authRouter.route('/signUp').post((req, res) => {
         } catch(error) {
             debug(error);
         }
-        if (client) {
-            client.close();
-        }
+        client.close();
     }())
 });
 
@@ -37,9 +35,10 @@ authRouter
     .get((req, res) => {
         res.render('signin');
     })
-    .post(passport.authenticate('local', { // TODO what mean 'local' authenticate
-        successRedirect: '/auth/profile',
-        failureMessage: '/'
+    .post(
+        passport.authenticate('local', { // TODO what mean 'local' authenticate
+            successRedirect: '/auth/profile',
+            failureRedirect: '/',
     }));
 
 authRouter.route('/profile').get((req, res)=>{
