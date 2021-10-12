@@ -1,8 +1,9 @@
 const passport = require('passport');
+require('./strategies/local.strategy')();
 
 // TODO configuration is on the site 'https://www.npmjs.com/package/passport'
 
-module.exports = function passportConfig(){
+module.exports = function passportConfig(app){
     app.use(passport.initialize());
     app.use(passport.session());
 

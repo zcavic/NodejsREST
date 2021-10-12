@@ -17,12 +17,12 @@ const authRouter = require('./src/routers/authRouter');
 // TODO is this controller
 app.use(morgen('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
-app.use(express.json()); // TODO
-app.use(express.urlencoded({extended:false}));
-app.use(cookieParser);
+app.use(express.json()); // TODO explore what is the purpose of using of json()
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(session({secret: 'globomantics'}));
 
-require('./src/config/passport.js')(app); // TODO
+require('./src/config/passport.js')(app); // TODO this is related with the order of 'require'
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
