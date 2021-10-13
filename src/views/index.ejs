@@ -20,7 +20,7 @@
     <header>
       <div class="container">
         <div class="logo col-md-5 col-sm-5 col-xs-8">
-          <a href="index.html"><img src="images/Globo-Logo-white.svg" alt="logo" /></a><span class="text">MANIACALLY
+          <a href="/"><img src="images/Globo-Logo-white.svg" alt="logo" /></a><span class="text">MANIACALLY
             TAKING TECH TO THE GLOBE</span>
         </div>
         <div class="mobile-togle col-md-12 col-sm-12 col-xs-12">
@@ -106,15 +106,18 @@
           </nav>
         </div>
 
-        <div class="sign-in col-md-2">
-          <span class="dvider"></span>
-          <div class="sign">
-            <a hrf="#"><img class="sign-in-img" src="images/avatar.svg" alt="sign-in">
-              Sign-in</a>
-
+        <form name="sign" action="/auth/signIn" method="get">
+          <div class="sign-in col-md-2">
+            <span class="dvider"></span>
+            <div class="sign">
+              <a hrf="#">
+                <img class="sign-in-img" src="images/avatar.svg" alt="sign-in">
+                <button type="submit" value="Sign-in" class="btn">Sign-in</button>
+              </a>
+            </div>
           </div>
+        </form>
 
-        </div>
 
       </div>
     </header>
